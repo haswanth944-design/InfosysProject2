@@ -116,3 +116,43 @@ main{display:flex;flex-direction:column;gap:16px;min-width:0}
 .toast.ok svg{color:#34d399}.toast.er svg{color:#ff7a8a}.toast.in svg{color:#8fa8ff}
 @media(max-width:900px){.app{grid-template-columns:1fr}aside{position:fixed;left:12px;top:12px;bottom:12px;width:260px;z-index:70;height:auto;transform:translateX(-120%);transition:.3s;background:var(--bg2)}aside.open{transform:none}.menu{display:grid}.tiles{grid-template-columns:1fr}.tile.w3,.tile.w2,.tile.w6{grid-column:auto}header nav .nb{display:none}.pill.d{display:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.bw{max-width:1280px;margin:0 auto;padding:16px;display:flex;flex-direction:column;gap:16px}
+.tabs{display:flex;gap:4px;margin-left:auto}
+.tab{padding:8px 14px;border-radius:10px;color:var(--mut);transition:.2s}.tab:hover{background:var(--surf2);color:var(--tx)}
+.tab.on{color:#fff;background:linear-gradient(90deg,rgba(139,92,246,.85),rgba(59,130,246,.75))}
+.fb{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.fb input,.fb select,.sel{padding:9px 12px;border-radius:12px;background:var(--inp);border:1px solid var(--bd);color:var(--tx);font:inherit}
+.kb{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.col{border-radius:20px;padding:14px;min-height:320px;transition:.2s}
+.col.over{outline:2px dashed var(--rc);background:var(--surf2)}
+.col h4{display:flex;gap:8px;align-items:center;font-size:14px}
+.tk{display:block;width:100%;text-align:left;padding:12px;border-radius:14px;margin-top:10px;background:var(--surf2);border:1px solid var(--bd);border-left:4px solid var(--pc);cursor:pointer;transition:.2s}
+.tk[draggable=true]{cursor:grab}.tk:hover{transform:translateY(-2px);box-shadow:var(--sh)}
+.mut{color:var(--mut);font-size:12.5px}
+.pbar{height:8px;border-radius:99px;background:var(--surf2);overflow:hidden}.pbar i{display:block;height:100%;background:linear-gradient(90deg,#8b5cf6,#3b82f6)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.stat{padding:14px;border-radius:16px;background:var(--surf2);border:1px solid var(--bd)}.stat b{display:block;font-size:22px}
+@media(max-width:900px){.kb{grid-template-columns:1fr}.tabs{margin-left:0}}
+/* ===== UI polish: elevated, animated controls ===== */
+.pri,.sec,.tab,.ni,.ib{position:relative;transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .2s,border-color .2s,color .2s}
+.pri{overflow:hidden;box-shadow:0 8px 24px rgba(99,102,241,.35),inset 0 1px 0 rgba(255,255,255,.25)}
+.pri::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.3) 50%,transparent 70%);transform:translateX(-120%);transition:transform .6s}
+.pri:hover:not(:disabled)::after{transform:translateX(120%)}
+.pri:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 14px 32px rgba(99,102,241,.5),inset 0 1px 0 rgba(255,255,255,.3)}
+.sec{box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.sec:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.28);border-color:rgba(143,168,255,.5)}
+.pri:active,.sec:active,.ib:active,.tab:active,.ni:active{transform:translateY(0) scale(.97)}
+.ib:hover{transform:translateY(-1px)}
+.ni:hover{transform:translateX(4px)}
+.ni.on{box-shadow:0 8px 22px rgba(99,102,241,.4),inset 0 1px 0 rgba(255,255,255,.2)}
+.tab.on{box-shadow:0 6px 18px rgba(99,102,241,.4)}
+.tile{transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,border-color .3s}
+.tile:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(0,0,0,.35)}
+.tk:hover{box-shadow:0 12px 28px rgba(0,0,0,.35)}
+.chip2{display:inline-block;padding:3px 11px;border-radius:99px;font-size:12px;font-weight:600;border:1px solid transparent;white-space:nowrap}
+.chip2.ok{color:#34d399;background:rgba(52,211,153,.14);border-color:rgba(52,211,153,.35)}
+.chip2.warn{color:#fbbf24;background:rgba(251,191,36,.14);border-color:rgba(251,191,36,.35)}
+.chip2.bad{color:#ff7a8a;background:rgba(255,122,138,.14);border-color:rgba(255,122,138,.35)}
+.chip2.info{color:#a78bfa;background:rgba(139,92,246,.16);border-color:rgba(139,92,246,.4)}
+tbody tr{transition:background .2s}tbody tr:hover{background:var(--surf)}
+.full{grid-column:1/-1}
